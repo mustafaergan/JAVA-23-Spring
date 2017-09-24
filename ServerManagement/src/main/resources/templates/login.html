@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8"/>
 <title>Insert title here</title>
 </head>
 <body>
-Login sayfasi
+Login sayfasi <br/>
+Okul Bilgisi <br/>
+<p th:text = "${okul}"/>
+Sınıf Bilgisi <br/>
+<p th:text = "${sinif}"/>
 </body>
 </html>

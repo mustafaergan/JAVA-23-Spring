@@ -24,13 +24,40 @@ public class MainController {
         return "merhabaspringboot";
     }
    
+   
    @RequestMapping("/login.java")
-   public String login(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
+   public String login(@RequestParam(value="name") String name, Model model) {
        model.addAttribute("name", name);
+       if(name.equals("23")){
+           model.addAttribute("sinif","Java-23");
+           model.addAttribute("okul","vektorel");  
+       }else if (name.equals("24")){
+    	   model.addAttribute("sinif","C#-24");
+           model.addAttribute("okul","Vektorel"); 
+       }
        return "login";
    }
 	
 	
-	
+   @RequestMapping("/anasayfa.java")
+   public String anasayfa(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
+       model.addAttribute("name", name);
+       return "index";
+   }
+   
+   @RequestMapping("/userlogin.java")
+   public String userlogin(Model model) {
+       return "myform";
+   }
+   
+   @RequestMapping("/user.java")
+   public String user(@RequestParam(value="kulAdi") String kul,
+		   @RequestParam(value="sifre")String sifre, Model model) {
+	   if(kul.equals("leprax") && sifre.equals("1234")){
+		   return "user";
+	   }else{
+		   return "fail";
+	   }
+   }
 	
 }
