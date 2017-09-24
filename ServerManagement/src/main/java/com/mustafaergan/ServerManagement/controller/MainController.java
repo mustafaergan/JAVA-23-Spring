@@ -18,11 +18,17 @@ public class MainController {
 		return "Hello World";
 	}
 	
-   @RequestMapping("/index")
+   @RequestMapping("/index.java")
     public String index(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
         model.addAttribute("name", name);
-        return "index";
+        return "merhabaspringboot";
     }
+   
+   @RequestMapping("/login.java")
+   public String login(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
+       model.addAttribute("name", name);
+       return "login";
+   }
 	
 	
 	
