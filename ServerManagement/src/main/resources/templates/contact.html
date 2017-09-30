@@ -92,27 +92,27 @@
           <strong>Form</strong>
         </h2>
         <hr class="divider">
-        <form>
+        <form id ="myForm">
           <div class="row">
             <div class="form-group col-lg-4">
               <label class="text-heading">Name</label>
-              <input type="text" class="form-control">
+              <input type="text" name="name" class="form-control">
             </div>
             <div class="form-group col-lg-4">
               <label class="text-heading">Email Address</label>
-              <input type="email" class="form-control">
+              <input type="email" name="email" class="form-control">
             </div>
             <div class="form-group col-lg-4">
               <label class="text-heading">Phone Number</label>
-              <input type="tel" class="form-control">
+              <input type="tel" name ="tel" class="form-control">
             </div>
             <div class="clearfix"></div>
             <div class="form-group col-lg-12">
               <label class="text-heading">Message</label>
-              <textarea class="form-control" rows="6"></textarea>
+              <textarea name="message" class="form-control" rows="6"></textarea>
             </div>
             <div class="form-group col-lg-12">
-              <button type="submit" class="btn btn-secondary">Submit</button>
+              <button id = "myButton" type="button" class="btn btn-secondary">Submit</button>
             </div>
           </div>
         </form>
@@ -139,6 +139,26 @@
       }).mouseleave(function () {
         $(this).find('iframe').removeClass('clicked')
       });
+    </script>
+    
+    <script type="text/javascript">
+        $(document).ready(function(){
+        	
+            $("#myButton").click(function(){
+            	var myData = $("#myForm").serialize();
+                $.ajax({
+	                	url: "iletisimBilgileri.json", 
+	                	data : myData,
+	                	success: function(result){
+	                		alert(result);
+	                	},
+	                	error : function(error){
+	                		alert(error);
+	                	}
+                	});
+            });
+        });
+        
     </script>
 
   </body>
