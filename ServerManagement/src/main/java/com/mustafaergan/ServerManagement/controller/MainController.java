@@ -1,5 +1,6 @@
 package com.mustafaergan.ServerManagement.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,15 +8,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.mustafaergan.ServerManagement.service.SunucuService;
+
 
 @Controller
 @RequestMapping(path = "/main")
 public class MainController {
+	
+	@Autowired
+	SunucuService sunucuService;
+	
 
 	@GetMapping(path = "/hello")
 	@ResponseBody
 	public String helloWorld() {
-		return "Hello World";
+		return sunucuService.sunucuIsmiVer();
 	}
 	
    @RequestMapping("/index.java")
