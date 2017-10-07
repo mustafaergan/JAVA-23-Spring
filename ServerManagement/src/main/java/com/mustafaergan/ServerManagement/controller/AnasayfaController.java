@@ -49,6 +49,11 @@ public class AnasayfaController {
 		return "menu";
 	}
 	
+	@GetMapping(path="/login.vek23")
+	public String login(Model model){
+		return "mahmut";
+	}
+	
 	
 
 }

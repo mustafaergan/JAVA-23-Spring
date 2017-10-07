@@ -18,11 +18,18 @@
               <a class="nav-link text-uppercase text-expanded" href="sunucuekle.vek23">Sunucu Ekle</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="kullanici.vek23">Kullan�c�lar</a>
+              <a class="nav-link text-uppercase text-expanded" href="kullanici.vek23">Kullanıcılar</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="iletisim.vek23">�letisim</a>
+              <a class="nav-link text-uppercase text-expanded" href="iletisim.vek23">İletisim</a>
             </li>
+            
+            <li class="nav-item px-lg-4">
+	            <form th:action="@{/logout}" method="post">
+	            	<input class="nav-link text-uppercase text-expanded" type="submit" value="Çıkış"/>
+	        	</form>
+            </li>
+            
           </ul>
         </div>
       </div>
