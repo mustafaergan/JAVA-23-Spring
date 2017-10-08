@@ -1,5 +1,7 @@
 package com.mustafaergan.ServerManagement.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,6 +39,17 @@ public class SunucularController {
 		Gson gson = new Gson();
 		return gson.toJson("Veri Ekleme Başaralı");
 	}
+	
+	@GetMapping(path = "/sunuculist.json")
+	@ResponseBody
+	public String sunuculist() {
+		Gson gson = new Gson();
+		List<Server> list = sunucuService.getSunucuList();
+		return gson.toJson(list);
+	}
+	
+	
+	
 	
 	
 	

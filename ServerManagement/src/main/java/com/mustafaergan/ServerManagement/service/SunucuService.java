@@ -1,5 +1,7 @@
 package com.mustafaergan.ServerManagement.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +29,10 @@ public class SunucuService {
 	
 	public void iletisimEkle(Contact contact){
 		contactDao.save(contact);
+	}
+
+	public List<Server> getSunucuList() {
+		return (List<Server>) sunucuDao.findAll();
 	}
 	
 }

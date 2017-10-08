@@ -18,6 +18,12 @@ public class MainController {
 	@Autowired
 	SunucuService sunucuService;
 	
+	@GetMapping(path = "/admin/hello")
+	@ResponseBody
+	public String adminHelloWorld() {
+		return "admin selamı";
+	}
+	
 
 	@GetMapping(path = "/hello")
 	@ResponseBody
