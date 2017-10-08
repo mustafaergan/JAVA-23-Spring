@@ -14,7 +14,7 @@
             <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="sunucu.vek23">Sunucular</a>
             </li>
-             <li class="nav-item px-lg-4">
+             <li sec:authorize="hasRole('ADMIN')" class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="sunucuekle.vek23">Sunucu Ekle</a>
             </li>
             <li class="nav-item px-lg-4">
@@ -26,7 +26,8 @@
             
             <li class="nav-item px-lg-4">
 	            <form th:action="@{/logout}" method="post">
-	            	<input class="nav-link text-uppercase text-expanded" type="submit" value="Çıkış"/>
+	            	<input class="nav-link text-uppercase text-expanded" 
+	            	type="submit" value="Çıkış"/>
 	        	</form>
             </li>
             
