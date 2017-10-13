@@ -1,5 +1,6 @@
 package com.mustafaergan.ServerManagement.controller;
 
+import java.lang.reflect.Type;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.mustafaergan.ServerManagement.entity.Server;
 import com.mustafaergan.ServerManagement.service.SunucuService;
 
@@ -45,7 +47,9 @@ public class SunucularController {
 	public String sunuculist() {
 		Gson gson = new Gson();
 		List<Server> list = sunucuService.getSunucuList();
-		return gson.toJson(list);
+		Type listOfTestObject = new TypeToken<List<Server>>(){}.getType();
+		String json = gson.toJson(list, listOfTestObject);
+		return json;
 	}
 	
 	
